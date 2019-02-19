@@ -4,16 +4,17 @@
   <parent>
     <groupId>org.camunda.connect</groupId>
     <artifactId>camunda-connect-bom</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
     <relativePath>bom</relativePath>
   </parent>
 
   <artifactId>camunda-connect-root</artifactId>
   <name>camunda BPM - connect - root</name>
+  <inceptionYear>2014</inceptionYear>
   <packaging>pom</packaging>
 
   <properties>
-    <connect.version.old>1.0.5</connect.version.old>
+    <connect.version.old>1.0.7</connect.version.old>
     <license.includeTransitiveDependencies>false</license.includeTransitiveDependencies>
   </properties>
 
@@ -39,7 +40,7 @@
       <dependency>
         <groupId>org.apache.httpcomponents</groupId>
         <artifactId>httpclient</artifactId>
-        <version>4.3.3</version>
+        <version>4.5.7</version>
       </dependency>
 
       <dependency>
@@ -104,7 +105,7 @@
     <url>https://github.com/camunda/camunda-connect</url>
     <connection>scm:git:git@github.com:camunda/camunda-connect.git</connection>
     <developerConnection>scm:git:git@github.com:camunda/camunda-connect.git</developerConnection>
-    <tag>1.0.7</tag>
+    <tag>HEAD</tag>
   </scm>
 
 </project>
