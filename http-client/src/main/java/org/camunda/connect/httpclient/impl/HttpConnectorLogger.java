@@ -59,7 +59,7 @@ public class HttpConnectorLogger extends ConnectLogger {
     logInfo("009", "Ignoring request configuration option with name '{}' and value '{}'", field, value);
   }
 
-  public void ignoreQueryParameter(String field, String value) {
+  public void ignoreQueryParameter(String field, Object value) {
     logInfo("010", "Ignoring query parameter with name '{}' and value '{}'", field, value);
   }
 

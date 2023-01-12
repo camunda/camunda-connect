@@ -173,11 +173,11 @@ public abstract class AbstractHttpConnector<Q extends HttpBaseRequest<Q, R>, R e
     httpRequest.setConfig(requestConfig);
   }
 
-  protected <T extends HttpRequestBase> void applyQueryParameters(T httpRequest, Map<String, String> queryParameters) {
+  protected <T extends HttpRequestBase> void applyQueryParameters(T httpRequest, Map<String, Object> queryParameters) {
     if (queryParameters != null && !queryParameters.isEmpty()) {
       URIBuilder uriBuilder = new URIBuilder(httpRequest.getURI());
-      for (Map.Entry<String, String> entry : queryParameters.entrySet()) {
-        uriBuilder.addParameter(entry.getKey(), entry.getValue());
+      for (Map.Entry<String, Object> entry : queryParameters.entrySet()) {
+        uriBuilder.addParameter(entry.getKey(), entry.getValue().toString());
       }
       try {
         httpRequest.setURI(uriBuilder.build());

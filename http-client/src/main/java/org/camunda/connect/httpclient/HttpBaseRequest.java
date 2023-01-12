@@ -122,19 +122,19 @@ public interface HttpBaseRequest<Q extends HttpBaseRequest<?, ?>, R extends Conn
    * @param value HTTP query value
    * @return this request
    */
-  Q query(String field, String value);
+  Q query(String field, Object value);
 
   /**
    *
    * @return the HTTP Query parameters of this request or null if non set
    */
-  Map<String,String> getQueryParameters();
+  Map<String,Object> getQueryParameters();
 
   /**
    *
    * @return the HTTP Query parameter value of this request or null if non set
    */
-  String getQueryParameter(String field);
+  Object getQueryParameter(String field);
 
   /**
    * Set a HTTP request configuration option for this request.

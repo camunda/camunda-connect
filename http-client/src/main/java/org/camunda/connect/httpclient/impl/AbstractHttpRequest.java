@@ -156,11 +156,11 @@ public class AbstractHttpRequest<Q extends HttpBaseRequest<?, ?>, R extends Http
   }
 
   @SuppressWarnings("unchecked")
-  public Q query(String field, String value) {
-    if (field == null || field.isEmpty() || value == null || value.isEmpty()) {
+  public Q query(String field, Object value) {
+    if (field == null || field.isEmpty() || value == null || value.toString().isEmpty()) {
       LOG.ignoreQueryParameter(field, value);
     } else {
-      Map<String, String> queries = getRequestParameter(HttpBaseRequest.PARAM_NAME_REQUEST_QUERY);
+      Map<String, Object> queries = getRequestParameter(HttpBaseRequest.PARAM_NAME_REQUEST_QUERY);
 
       if (queries == null) {
         queries = new HashMap<>();
@@ -172,12 +172,12 @@ public class AbstractHttpRequest<Q extends HttpBaseRequest<?, ?>, R extends Http
     return (Q) this;
   }
 
-  public Map<String, String> getQueryParameters() {
+  public Map<String, Object> getQueryParameters() {
     return getRequestParameter(HttpBaseRequest.PARAM_NAME_REQUEST_QUERY);
   }
 
-  public String getQueryParameter(String field) {
-    Map<String, String> query = getQueryParameters();
+  public Object getQueryParameter(String field) {
+    Map<String, Object> query = getQueryParameters();
     if (query != null) {
       return query.get(field);
     }

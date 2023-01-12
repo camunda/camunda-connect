@@ -180,6 +180,14 @@ public class HttpConnectorTest {
     HttpGet request = interceptor.getTarget();
     assertThat(request.getURI().getQuery()).isEqualTo("foo=bar&hello=world");
   }
+
+  @Test
+  public void shouldCastString(){
+    connector.createRequest().url(EXAMPLE_URL).query("foo", 1).query("hello",12.12).get().execute();
+    HttpGet request = interceptor.getTarget();
+    assertThat(request.getURI().getQuery()).isEqualTo("foo=1&hello=12.12");
+  }
+
   @Test
   public void shouldSetEncodeQueries(){
     connector.createRequest().url(EXAMPLE_URL).query("foo", "bar bar").query("hello", "world world").get().execute();
