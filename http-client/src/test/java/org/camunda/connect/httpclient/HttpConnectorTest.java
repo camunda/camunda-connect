@@ -174,6 +174,19 @@ public class HttpConnectorTest {
     assertThat(contentLength).isEqualTo(EXAMPLE_PAYLOAD.length());
   }
 
+  @Test
+  public void shouldSetQueries(){
+    connector.createRequest().url(EXAMPLE_URL).query("foo", "bar").query("hello", "world").get().execute();
+    HttpGet request = interceptor.getTarget();
+    assertThat(request.getURI().getQuery()).isEqualTo("foo=bar&hello=world");
+  }
+  @Test
+  public void shouldSetEncodeQueries(){
+    connector.createRequest().url(EXAMPLE_URL).query("foo", "bar bar").query("hello", "world world").get().execute();
+    HttpGet request = interceptor.getTarget();
+    assertThat(request.getURI().getQuery()).isEqualTo("foo=bar+bar&hello=world+world");
+  }
+
   protected void verifyHttpRequest(Class<? extends HttpRequestBase> requestClass) {
     Object target = interceptor.getTarget();
     assertThat(target).isInstanceOf(requestClass);

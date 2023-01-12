@@ -17,6 +17,7 @@
 package org.camunda.connect.httpclient.impl;
 
 import java.io.ByteArrayInputStream;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
@@ -33,6 +34,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpTrace;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -99,6 +101,8 @@ public abstract class AbstractHttpConnector<Q extends HttpBaseRequest<Q, R>, R e
     applyHeaders(httpRequest, request.getHeaders());
 
     applyPayload(httpRequest, request);
+
+    applyQueryParameters(httpRequest, request.getQueryParameters());
 
     return httpRequest;
   }
@@ -167,6 +171,21 @@ public abstract class AbstractHttpConnector<Q extends HttpBaseRequest<Q, R>, R e
     }
     RequestConfig requestConfig = configBuilder.build();
     httpRequest.setConfig(requestConfig);
+  }
+
+  protected <T extends HttpRequestBase> void applyQueryParameters(T httpRequest, Map<String, String> queryParameters) {
+    if (queryParameters != null && !queryParameters.isEmpty()) {
+      URIBuilder uriBuilder = new URIBuilder(httpRequest.getURI());
+      for (Map.Entry<String, String> entry : queryParameters.entrySet()) {
+        uriBuilder.addParameter(entry.getKey(), entry.getValue());
+      }
+      try {
+        httpRequest.setURI(uriBuilder.build());
+      } catch (URISyntaxException e) {
+        // should never happen
+        throw new IllegalArgumentException(e.getMessage(), e);
+      }
+    }
   }
 
 

@@ -191,4 +191,37 @@ public class HttpRequestTest {
       assertThat(request.getConfigOptions()).isNull();
   }
 
+  @Test
+  public void setQueryParams() {
+    HttpRequest request = connector.createRequest().get();
+    request.query("foo", "bar");
+    request.query("hello", "world");
+
+    assertThat(request.getQueryParameters())
+            .hasSize(2)
+            .containsEntry("foo", "bar")
+            .containsEntry("hello", "world");
+
+
+    assertThat(request.getQueryParameter("hello")).isEqualTo("world");
+    assertThat(request.getQueryParameter("unknown")).isNull();
+  }
+
+  @Test
+  public void shouldIgnoreQueryParamsWithNullOrEmptyNameOrValue() {
+    HttpRequest request = connector.createRequest().get();
+
+    request.query(null, "test");
+    assertThat(request.getQueryParameters()).isNull();
+
+    request.query("", "test");
+    assertThat(request.getQueryParameters()).isNull();
+
+    request.query("test", null);
+    assertThat(request.getQueryParameters()).isNull();
+
+    request.query("test", "");
+    assertThat(request.getQueryParameters()).isNull();
+  }
+
 }

@@ -31,6 +31,8 @@ public interface HttpBaseRequest<Q extends HttpBaseRequest<?, ?>, R extends Conn
 
   String PARAM_NAME_REQUEST_CONFIG = "request-config";
 
+  String PARAM_NAME_REQUEST_QUERY = "query";
+
   /**
    * Set the url of this request.
    *
@@ -111,6 +113,28 @@ public interface HttpBaseRequest<Q extends HttpBaseRequest<?, ?>, R extends Conn
    * @return the HTTP configuration option value of this request or null if non set
    */
   Object getConfigOption(String field);
+
+
+  /**
+   * Set a HTTP query parameter for this request.
+   *
+   * @param field HTTP query field
+   * @param value HTTP query value
+   * @return this request
+   */
+  Q query(String field, String value);
+
+  /**
+   *
+   * @return the HTTP Query parameters of this request or null if non set
+   */
+  Map<String,String> getQueryParameters();
+
+  /**
+   *
+   * @return the HTTP Query parameter value of this request or null if non set
+   */
+  String getQueryParameter(String field);
 
   /**
    * Set a HTTP request configuration option for this request.
