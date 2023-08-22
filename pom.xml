@@ -28,6 +28,7 @@
     <additionalparam>-Xdoclint:none</additionalparam>
 
     <plugin.version.maven-bundle>4.1.0</plugin.version.maven-bundle>
+    <plugin.version.javadoc>3.5.0</plugin.version.javadoc>
     <version.java>11</version.java>
   </properties>
 
