@@ -16,6 +16,10 @@
   <name>Camunda Platform - connect - bom</name>
   <packaging>pom</packaging>
 
+  <properties>
+    <plugin.version.javadoc>3.0.1</plugin.version.javadoc>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
 
@@ -45,12 +49,6 @@
 
     </dependencies>
   </dependencyManagement>
-  <build>  <pluginManagement>   <plugins>       <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.5.0</version>
-            </plugin></plugins></pluginManagement></build>
-
 
   <scm>
     <url>https://github.com/camunda/camunda-connect</url>
