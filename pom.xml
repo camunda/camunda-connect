@@ -26,9 +26,6 @@
 
     <license.includeTransitiveDependencies>false</license.includeTransitiveDependencies>
     <additionalparam>-Xdoclint:none</additionalparam>
-
-    <plugin.version.maven-bundle>4.1.0</plugin.version.maven-bundle>
-    <version.java>11</version.java>
   </properties>
 
   <modules>
