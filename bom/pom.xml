@@ -4,8 +4,7 @@
   <parent>
     <groupId>org.camunda</groupId>
     <artifactId>camunda-bpm-release-parent</artifactId>
-     <version>2.2.7</version> 
-<!--    <version>2.3.0-SNAPSHOT</version>-->
+    <version>2.3.0-SNAPSHOT</version>
     <!-- do not remove empty tag - http://jira.codehaus.org/browse/MNG-4687 -->
     <relativePath />
   </parent>
@@ -15,10 +14,6 @@
   <version>1.6.0-SNAPSHOT</version>
   <name>Camunda Platform - connect - bom</name>
   <packaging>pom</packaging>
-
-  <properties>
-    <plugin.version.javadoc>3.0.1</plugin.version.javadoc>
-  </properties>
 
   <dependencyManagement>
     <dependencies>
