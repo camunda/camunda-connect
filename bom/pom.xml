@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.connect</groupId>
   <artifactId>camunda-connect-bom</artifactId>
-  <version>1.7.0-SNAPSHOT</version>
+  <version>1.6.1-SNAPSHOT</version>
   <name>Camunda Platform - connect - bom</name>
   <packaging>pom</packaging>
 
