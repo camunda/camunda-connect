@@ -47,6 +47,7 @@
               <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
               <artifactSet>
                 <excludes>
+                  <exclude>commons-logging:commons-logging</exclude>
                   <exclude>org.camunda.commons:*</exclude>
                   <exclude>org.camunda.connect:camunda-connect-core</exclude>
                   <exclude>org.slf4j:*</exclude>
