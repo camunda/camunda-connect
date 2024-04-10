@@ -16,9 +16,8 @@
   <properties>
     <assertj.version>2.9.1</assertj.version>
     <commons.version>1.13.0</commons.version>
-    <commons-codec.version>1.15</commons-codec.version>
     <connect.version.old>1.6.0</connect.version.old>
-    <httpclient.version>4.5.13</httpclient.version>
+    <httpclient.version>5.3.1</httpclient.version>
     <junit.version>4.13.1</junit.version>
     <logback.version>1.2.11</logback.version>
     <mockito.version>1.9.5</mockito.version>
@@ -49,15 +48,9 @@
       </dependency>
 
       <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpclient</artifactId>
+        <groupId>org.apache.httpcomponents.client5</groupId>
+        <artifactId>httpclient5</artifactId>
         <version>${httpclient.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-codec</groupId>
-        <artifactId>commons-codec</artifactId>
-        <version>${commons-codec.version}</version>
       </dependency>
 
       <dependency>
