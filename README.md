@@ -1,36 +1,11 @@
-camunda-connect
-===============
+# This project was moved
 
-<p>
-  <a href="http://camunda.com/">Home</a> |
-  <a href="https://docs.camunda.org/manual/latest/reference/connect/">Documentation</a> |
-  <a href="https://forum.camunda.org/">Forum</a> |
-  <a href="https://jira.camunda.com/browse/CAM">Issues</a> |
-  <a href="LICENSE">License</a> |
-  <a href="CONTRIBUTING.md">Contribute</a>
-</p>
+This repository was merged with the `camunda-bpm-platform` repository starting with 
+Camunda Platform Runtime 7.22.0-alpha2.
 
-Simple API for connecting HTTP Services and other things.
+Please find the new location of the source code here:\
+https://github.com/camunda/camunda-bpm-platform/tree/master/connect
 
-# List of connectors
+Please submit any future contributions to the `camunda-bpm-platform` repository.
 
-* HTTP Connector
-* SOAP HTTP Connector
-
-# Using a Connector
-
-camunda Connect API aims at two usage scenarios, usage in a generic system such as Camunda Platform
-process engine and standalone usage via API. Please see the [official documentation](https://docs.camunda.org/manual/latest/reference/connect/) for more information.
-
-# Contributing
-
-Have a look at our [contribution guide](https://github.com/camunda/camunda-bpm-platform/blob/master/CONTRIBUTING.md) for how to contribute to this repository.
-
-
-# License:
-
-The source files in this repository are made available under the <a href="LICENSE">Apache License, Version 2.0</a>.
-
-
-
-[CONTRIBUTING.md]: https://github.com/camunda/camunda-bpm-platform/blob/master/CONTRIBUTING.md
+Some maintenance branches might still be active in this repository.
