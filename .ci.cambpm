@@ -4,5 +4,6 @@ buildMavenAndDeployToMavenCentral([
   mvn:3.5,
   additionalMvnGoals:'javadoc:javadoc',
   licenseCheck:true,
+  mvnReleaseProfiles:'sonatype-oss-release',
   publishZipArtifactToCamundaOrg:true
 ])
